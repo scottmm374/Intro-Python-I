@@ -14,8 +14,11 @@ y = "7"
 # Write a print statement that combines x + y into the integer value 12
 
 # YOUR CODE HERE
-
+combine_number = (int(y) + x)
+print(combine_number, type(combine_number))
 
 # Write a print statement that combines x + y into the string value 57
 
 # YOUR CODE HERE
+combine_string = (str(x) + y)
+print(combine_string, type(combine_string))

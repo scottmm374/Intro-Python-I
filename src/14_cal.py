@@ -30,3 +30,34 @@ it should use today’s date to get the month and year.
 import sys
 import calendar
 from datetime import datetime
+
+
+now = datetime.now()
+
+# Default is month, year so we are switching them here as well as including default value if any arg is omitted
+
+
+def current_cal(year=now.year, month=now.month):
+    return calendar.month(year, month)
+
+
+user_input = sys.argv
+# sys.argv is command line arg, 1st arg is always file
+
+
+if len(user_input) == 1:
+  # if only 1 arg, user did not input
+    print(current_cal())
+
+  # if input 2 args, then file and year are in args, no month
+if len(user_input) == 2:
+    print(current_cal(int(user_input[1])))
+
+  # if 3 args then file, year, month are input
+if len(user_input) == 3:
+    print(current_cal(int(user_input[1]), int(user_input[2])))
+else:
+    print("Please Input with [month] [year]: example 4 2020")
+
+
+current_cal()
